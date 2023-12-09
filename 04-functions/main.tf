@@ -41,5 +41,5 @@ output "fruit_stock" {
 # try can be used 
 
 output "fruit_stocks" {
-    value = try(var.fruits_with_stock["pineapple"], null)   # reports error as you're trying to print something that's not there. 
+    value = try(var.fruits_with_stock["pineapple"], 0)   # reports error as you're trying to print something that's not there. 
 }
