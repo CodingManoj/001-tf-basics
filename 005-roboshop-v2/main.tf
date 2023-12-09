@@ -35,5 +35,5 @@ variable "components" {
 
 resource "aws_security_group" "sg" {
   for_each = var.components
-  name     = lookup(each.key["name"])
+  name     = lookup(var.components, each.value["name"], null)
 }
