@@ -3,5 +3,5 @@ variable "fruits" {
 }
 
 output "fruits_op" {
-    value = var.fruits
+    value = var.fruits[0]
 }
