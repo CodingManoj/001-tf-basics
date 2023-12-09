@@ -29,6 +29,17 @@ output "fruit_stock" {
     value = var.fruits_with_stock["apple"]   # prints 100 
 }
 
+
+# So, we need to handle these exceptions
+# output "fruit_stocks" {
+#     value = var.fruits_with_stock["pineapple"]   # reports error as you're trying to print something that's not there. 
+# }
+
+
+
+# If you're not able to find the value, report default value . . . and that can be done using functions 
+# try can be used 
+
 output "fruit_stocks" {
-    value = var.fruits_with_stock["pineapple"]   # reports error as you're trying to print something that's not there. 
+    value = try(var.fruits_with_stock["pineapple"], null)   # reports error as you're trying to print something that's not there. 
 }
