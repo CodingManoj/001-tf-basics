@@ -9,6 +9,6 @@ resource "aws_instance" "instance" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "HelloWorld"
+    Name = element(var.components, count.index)
   }
 }
