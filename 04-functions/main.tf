@@ -58,6 +58,10 @@ variable "fruits_and_stock" {
     }
 }
 
-output "fruits_and_stock_op" {
+output "fruits_and_stock_price" {
     value = try(var.fruits_and_stock["apple"].price, 0)
+}
+
+output "fruits_and_stock_place" {
+    value = try(var.fruits_and_stock["apple"].place, "DontKnow")   # Since the place is not defined it reports default value   
 }
