@@ -51,7 +51,7 @@ output "instances" {
 }
 
 output "prv_ip" {
-    value = aws_instance.instance.private_ip
+    value = aws_instance.instance[each.key].private_ip
 }
 
 
