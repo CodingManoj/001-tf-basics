@@ -14,5 +14,6 @@ variable "fruits" {
 
 output "fruits_op" {
     # value = var.fruits[2]
-    value =  element(var.fruits,1 )
+    # value =  element(var.fruits,1 ) # works
+    value =  element(var.fruits,2)    # cycling will happend and will switch back to 0 and counts from 0
 }
