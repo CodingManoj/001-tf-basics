@@ -10,6 +10,10 @@ variable "sgid" {
   default = "sg-052fd946b7e11841a"
 }
 
+variable "zoneid" {
+  default = "Z031297333JO38PNHPROR"
+}
+
 variable "components" {
     default = {
         cart        = { name = "cart-qa" }
@@ -30,6 +34,16 @@ resource "aws_instance" "instance" {
   tags = {
         Name       = lookup(each.value, "name", null)
    }
+}
+
+resource "aws_route53_record" "www" {
+  for_each = var.components
+
+  zone_id  = var.zoneid
+  name     = "${lookup(each.value, "name", null)}.roboshop.internal"
+  type     = "A"
+  ttl      = 10
+  records  = aws_instance.instance.private_ip
 }
 
 output "instances" {
