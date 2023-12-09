@@ -1,5 +1,5 @@
 variable "components" {
-    default = ["mongogd" , "frontend" , "catalogue"]
+    default = ["dispatch", "mongogd" , "frontend" , "catalogue"]
 }
 
 resource "aws_instance" "instance" {
