@@ -32,6 +32,10 @@ resource "aws_instance" "instance" {
    }
 }
 
+output "instances" {
+    value = aws_instance.instance
+}
+
 
 
 resource "aws_security_group" "sg" {
