@@ -50,6 +50,9 @@ output "instances" {
     value = aws_instance.instance
 }
 
+output "prv_ip" {
+    value = aws_instance.instance.private_ip
+}
 
 
 resource "aws_security_group" "sg" {
