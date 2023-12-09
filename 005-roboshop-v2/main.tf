@@ -16,6 +16,6 @@ resource "aws_instance" "instance" {
 
 resource "aws_security_group" "sg" {
   count = length(var.components)
-  name  = element(values.components, count.index)
+  name  = element(var.components, count.index)
 }
 
