@@ -13,10 +13,10 @@ variable "sgid" {
 variable "components" {
     default = {
         cart        = { name = "cart-qa" }
-        catalogue   = { name = "catalogue-qa" },
-        payment     = { name = "payment-qa" },
-        shipping    = { name = "shipping-qa" },
-        dispatch    = { name = "dispatch-qa" },
+        catalogue   = { name = "catalogue-qa"}
+        payment     = { name = "payment-qa" }
+        shipping    = { name = "shipping-qa"}
+        dispatch    = { name = "dispatch-qa"}
 
     }
 }
