@@ -5,6 +5,9 @@
 
 variable "components" {
     default = {
+        cart = {
+            name = "cart-sg"
+        },
         catalogue = {
             name = "catalogue-sg"
         },
