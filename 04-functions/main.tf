@@ -26,5 +26,9 @@ variable "fruits_with_stock" {
 }
 
 output "fruit_stock" {
-    value = var.fruits_with_stock["apple"]
+    value = var.fruits_with_stock["apple"]   # prints 100 
+}
+
+output "fruit_stock" {
+    value = var.fruits_with_stock["pineapple"]   # reports error as you're trying to print something that's not there. 
 }
