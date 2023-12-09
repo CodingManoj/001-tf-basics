@@ -41,5 +41,23 @@ output "fruit_stock" {
 # try can be used 
 
 output "fruit_stocks" {
-    value = try(var.fruits_with_stock["pineapple"], 0)   # reports error as you're trying to print something that's not there. 
+    value = try(var.fruits_with_stock["pineapple"], 0)   #since pineapple is not defined, it takes default value as 0
+}
+
+
+# Map of maps 
+
+
+
+variable "fruits_and_stock" {
+    default = {
+        apple = {
+            price = 100 
+            size = "medium"
+        }
+    }
+}
+
+output "fruits_and_stock_op" {
+    value = try(var.fruits_and_stock["apple"].price, 0)
 }
