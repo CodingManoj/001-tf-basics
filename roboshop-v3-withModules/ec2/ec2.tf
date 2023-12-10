@@ -25,3 +25,38 @@ resource "aws_route53_record" "www" {
   ttl      = 10
   records  = [aws_instance.instance.private_ip]
 }
+
+
+# App Deploy
+
+# # Installing the applicaiton
+# resource "null_resource" "app" {
+#   provisioner "remote-exec" {
+#     connection {
+#       type     = "ssh"
+#       user     = local.SSH_USERNAME
+#       password = local.SSH_PASSWORD
+#       host     = element(local.INSTANCE_PRIVATE_IPS, count.index)
+#     }
+#     inline = [
+#         "sleep 30" , 
+#         "ansible-playbook -i ${var.name}-dev.roboshop.internal  -e ansible_user=centos -e ansible_user -e ENV=dev -e COMPONENT=${var.name} roboshop.yml"
+#     ]
+#   }
+# }
+
+resource "null_resource" "app_deploy" {
+
+  depends_on = [
+    aws_route53_record.www
+  ]
+
+  provisioner "local-exec" {
+    command = <<EOF
+cd /home/centos/ansible
+git pull
+sleep 10
+ansible-playbook -i inv-dev -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=${var.name} roboshop.yml 
+EOF
+  }
+}
