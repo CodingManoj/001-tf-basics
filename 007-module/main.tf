@@ -8,5 +8,5 @@ module "ec2" {
 }
 
 output "ami" {
-    value = module.test
+    value = module.ec2
 }
