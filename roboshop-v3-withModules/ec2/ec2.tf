@@ -45,18 +45,23 @@ resource "aws_route53_record" "www" {
 #   }
 # }
 
-resource "null_resource" "app_deploy" {
+# Installing the applicaiton
+resource "null_resource" "app" {
 
-  depends_on = [
-    aws_route53_record.www
-  ]
+  triggers = {
+    always_run = "${timestamp()}"                      # This ensure your provisoner would be execuring all the time,
+  }
 
-  provisioner "local-exec" {
-    command = <<EOF
-cd /home/centos/ansible
-git pull
-sleep 10
-ansible-playbook -i inv-prod -e ENV=prod -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=${var.name} run.yaml 
-EOF
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      password = "DevOps321"
+      host     = aws_instance.instance.private_ip
+    }
+    inline = [
+        "sleep 30" , 
+        "ansible-pull -U https://github.com/b56-clouddevops/ansible.git -e ENV=dev -e COMPONENT=${var.name} roboshop-pull.yml"
+    ]
   }
 }
