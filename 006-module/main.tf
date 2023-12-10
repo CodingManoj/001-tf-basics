@@ -9,7 +9,7 @@ module "ec2" {
 
 output "ami" {
     # value = module.ec2    # Prints all the outputs related to ec2 module
-    # value = module.ec2.ami    # prints only AMI output
+    value = module.ec2.ami    # prints only AMI output
 }
 
 output "private_ip" {
