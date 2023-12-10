@@ -2,6 +2,10 @@ variable "sgid" {
     default    = ["sg-052fd946b7e11841a"]
 }
 
+variable "zoneid" {
+    default    = "Z031297333JO38PNHPROR"
+}
+
 variable "components" {
     default = {
         frontend = {
