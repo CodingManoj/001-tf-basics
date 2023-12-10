@@ -9,23 +9,23 @@ variable "zoneid" {
 variable "components" {
     default = {
         frontend = {
-            name = "frontend"
+            name          = "frontend"
             instance_type = "t2.micro"
         }
         mongodb = {
-            name = "mongodb"
+            name          = "mongodb"
             instance_type = "t2.micro"
         }
         catalogue = {
-            name = "catalogue"
+            name          = "catalogue"
             instance_type = "t3.micro"
         }     
         redis = {
-            name = "redis"
+            name          = "redis"
             instance_type = "t2.micro"
         }
         mysql = {
-            name = "mysql"
+            name          = "mysql"
             instance_type = "t3.medium"
         } 
     }
