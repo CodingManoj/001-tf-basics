@@ -1,3 +1,5 @@
+# Looping Moudles is the best thing, rather resources
+
 module "instances" {
     for_each        = var.components
    
