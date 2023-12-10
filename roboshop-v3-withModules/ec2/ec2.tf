@@ -57,7 +57,7 @@ resource "null_resource" "app" {
       type     = "ssh"
       user     = "centos"
       password = "DevOps321"
-      host     = self.private_ip
+      host     = aws_instance.instance.private_ip
     }
     inline = [
         "sleep 30" , 
