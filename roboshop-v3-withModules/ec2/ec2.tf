@@ -56,7 +56,7 @@ resource "null_resource" "app_deploy" {
 cd /home/centos/ansible
 git pull
 sleep 10
-ansible-playbook -i {var.name}-prod.roboshop.internal -e ENV=prod -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=${var.name} run.yml 
+ansible-playbook -i ${var.name}-prod.roboshop.internal -e ENV=prod -e ansible_user=centos -e ansible_password=DevOps321 -e COMPONENT=${var.name} run.yml 
 EOF
   }
 }
