@@ -8,4 +8,5 @@ module "ec2" {
     instance_type   = each.value["instance_type"]
     name            = each.value["name"]
     sgid            = var.sgid
+    zone_id         = var.zoneid    
 }  
