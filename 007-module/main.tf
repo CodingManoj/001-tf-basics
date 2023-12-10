@@ -14,3 +14,7 @@ output "ami" {
 output "private_ip" {
     value   = module.ec2
 }
+
+output "private_dns" {
+    value   = module.ec2
+}
