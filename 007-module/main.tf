@@ -12,5 +12,5 @@ output "ami" {
 }
 
 output "private_ip" {
-    value   =  value = module.ec2
+    value   = module.ec2
 }
