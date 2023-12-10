@@ -10,3 +10,7 @@ module "ec2" {
 output "ami" {
     value = module.ec2
 }
+
+output "private_ip" {
+    value   =  value = module.ec2
+}

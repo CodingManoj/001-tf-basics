@@ -8,9 +8,9 @@ output "ami" {
   value = data.aws_ami.ami
 }
 
-# output "private_ip" {
-#     value   =  aws_instance.instance.private_ip
-# }
+output "private_ip" {
+    value   =  aws_instance.instance.private_ip
+}
 
 
 resource "aws_instance" "instance" {
