@@ -17,6 +17,8 @@ resource "aws_instance" "instance" {
 
 resource "aws_route53_record" "www" {
 
+  depends_on = [aws_instance.instance]
+
   zone_id  = var.zone_id
   name     = var.name
   type     = "A"
