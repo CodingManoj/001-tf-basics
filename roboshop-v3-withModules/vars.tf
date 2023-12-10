@@ -2,7 +2,7 @@ variable "sgid" {
     default    = ["sg-052fd946b7e11841a"]
 }
 
-variable "zoneid" {
+variable "zone_id" {
     default    = "Z031297333JO38PNHPROR"
 }
 

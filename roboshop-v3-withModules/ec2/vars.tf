@@ -3,4 +3,4 @@ variable "sgid" {}
 variable "components" {}
 variable "name" {}
 variable "instance_type" {}
-variable "zoneid" {}
+variable "zone_id" {}
