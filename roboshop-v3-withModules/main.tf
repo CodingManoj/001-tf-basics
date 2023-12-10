@@ -1,5 +1,5 @@
 module "instances" {
-    for_each = var.components
+    for_each        = var.components
    
     source          = "./ec2"
     instance_type   = each.value["instance_type"]
