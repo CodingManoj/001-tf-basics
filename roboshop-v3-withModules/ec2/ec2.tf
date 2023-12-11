@@ -63,7 +63,8 @@ resource "null_resource" "app" {
         "sleep 30",
         "COMPONENT=${var.name}",
         "COMP=$(echo ${var.name} | sed 's/-dev//g')",
-        "ansible-pull -U https://github.com/b56-clouddevops/ansible.git -e ENV=dev -e COMPONENT=$COMP -e MYSQL_PSW="RoboShop@1" roboshop-pull.yml"
+        "SQL_PSW=RoboShop@1",
+        "ansible-pull -U https://github.com/b56-clouddevops/ansible.git -e ENV=dev -e COMPONENT=$COMP -e MYSQL_PSW="$SQL_PSW" roboshop-pull.yml"
     ]
   }
 }
