@@ -61,9 +61,9 @@ resource "null_resource" "app" {
     }
     inline = [
         "sleep 30",
-        "COMPONENT=${var.name}"
-        "COMP=$(echo "$COMPONENT" | sed 's/-dev//g')"
-        "ansible-pull -U https://github.com/b56-clouddevops/ansible.git -e ENV=dev -e COMPONENT=${var.name} roboshop-pull.yml"
+        "COMPONENT=${var.name}",
+        "COMP=$(echo ${var.name} | sed 's/-dev//g')",
+        "ansible-pull -U https://github.com/b56-clouddevops/ansible.git -e ENV=dev -e COMPONENT=${COMP} roboshop-pull.yml"
     ]
   }
 }
