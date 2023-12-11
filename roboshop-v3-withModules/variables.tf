@@ -50,3 +50,7 @@ variable "components" {
     }
   }
 }
+
+variable "MYSQL_PSW" {
+    default = "RoboShop@1"
+}
