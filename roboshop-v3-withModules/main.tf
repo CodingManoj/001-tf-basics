@@ -8,6 +8,7 @@ module "instances" {
     name            = each.value["name"]
     sgid            = var.sgid
     zone_id         = var.zone_id    
+    MYSQL_PSW       = var.MYSQL_PSW
 }  
 
 # module "instances" {
