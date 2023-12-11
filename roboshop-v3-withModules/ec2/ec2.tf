@@ -60,7 +60,9 @@ resource "null_resource" "app" {
       host     = aws_instance.instance.private_ip
     }
     inline = [
-        "sleep 30" , 
+        "sleep 30",
+        "COMPONENT=${var.name}"
+        "COMP=$(echo "$COMPONENT" | sed 's/-dev//g')"
         "ansible-pull -U https://github.com/b56-clouddevops/ansible.git -e ENV=dev -e COMPONENT=${var.name} roboshop-pull.yml"
     ]
   }
