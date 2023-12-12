@@ -1,7 +1,7 @@
 provider "aws" {}
 
 variable "test" {
-    default = " dev"
+    default = "dev"
 }
 
 output "env" {
