@@ -7,3 +7,5 @@ variable "test" {
 output "env" {
     value = var.test
 }
+
+
