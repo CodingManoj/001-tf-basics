@@ -20,6 +20,12 @@ variable "vpc" {
     }
 }
 
-output "subnets" {
+output "public_subnets" {
     value = merge(var.vpc["main"]["subnets"]["public"])
+}
+output "app_subnets" {
+    value = merge(var.vpc["main"]["subnets"]["app"])
+}
+output "db_subnets" {
+    value = merge(var.vpc["main"]["subnets"]["db"])
 }
