@@ -20,15 +20,15 @@ variable "vpc" {
     }
 }
 
-output "public_subnets" {
-    value = merge(var.vpc["main"]["subnets"]["public"])
-}
-output "app_subnets" {
-    value = merge(var.vpc["main"]["subnets"]["app"])
-}
-output "db_subnets" {
-    value = merge(var.vpc["main"]["subnets"]["db"])
-}
+# output "public_subnets" {
+#     value = merge(var.vpc["main"]["subnets"]["public"])
+# }
+# output "app_subnets" {
+#     value = merge(var.vpc["main"]["subnets"]["app"])
+# }
+# output "db_subnets" {
+#     value = merge(var.vpc["main"]["subnets"]["db"])
+# }
 
 output "all_subnets" {
     value = merge(var.vpc["main"]["subnets"]["public"], var.vpc["main"]["subnets"]["app"], var.vpc["main"]["subnets"]["db"])
