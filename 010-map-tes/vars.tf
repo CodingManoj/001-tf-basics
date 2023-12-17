@@ -29,3 +29,7 @@ output "app_subnets" {
 output "db_subnets" {
     value = merge(var.vpc["main"]["subnets"]["db"])
 }
+
+output "all_subnets" {
+    value = merge(var.vpc["main"]["subnets"]["public"], var.vpc["main"]["subnets"]["app"], var.vpc["main"]["subnets"]["db"])
+}
