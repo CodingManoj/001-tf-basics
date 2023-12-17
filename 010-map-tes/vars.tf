@@ -13,7 +13,7 @@ variable "vpc" {
                 }
                 db = {
                     db1 = { cidr = "10.0.4.0/24" , az = "us-east1-a"}
-                    db1 = { cidr = "10.0.5.0/24" , az = "us-east1-b"}
+                    db2 = { cidr = "10.0.5.0/24" , az = "us-east1-b"}
                 }
             }
         }
