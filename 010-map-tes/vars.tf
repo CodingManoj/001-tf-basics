@@ -20,4 +20,6 @@ variable "vpc" {
     }
 }
 
-output subnets
+output "subnets" {
+    value = var.vpc
+}
